@@ -1,0 +1,12 @@
+<main class="main">
+  <app-post-form (submitForm)="addPost($event)" />
+  
+  <section class="post-list">
+    @for (post of posts(); track post.title) {
+      <app-post-card [post]="post" />
+    }@empty {
+    <p>No itens found</p>
+    }    
+  </section>
+
+</main>
